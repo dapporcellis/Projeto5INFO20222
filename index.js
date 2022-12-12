@@ -37,6 +37,29 @@ app.post('/admin/usuario/lst',function(req,res){
   })
 })
 
+app.get('/admin/usuario/del/:id',function(req,res){
+  Usuario.findByIdAndDelete(req.params.id,function(err,usuario){
+    res.redirect('/admin/usuario/lst')
+  })
+})
+
+app.get('/admin/usuario/edt/:id',function(req,res){
+  Usuario.findById(req.params.id,function(err,usuario){
+    res.render('usuario/edt',{'Usuario':usuario})
+  })
+})
+
+app.post('/admin/usuario/edt/:id',function(req,res){
+  Usuario.findByIdAndUpdate(req.params.id,{
+    nome: req.body.nome,
+    email: req.body.email,
+    senha: req.body.senha,
+    foto: req.body.foto
+  },function(err,usuario){
+    res.redirect('/admin/usuario/lst')
+  })
+})
+
 app.listen(3000, function(){
   console.log("Servidor funcionando na porta 3000")
 });
