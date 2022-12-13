@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adiciona Usuário</title>
-</head>
-<body>
-    <h1>Adiciona Usuário</h1>
-    <form method="post">
-        Nome<br> 
-        <input type="text" name="nome" placeholder="Digite seu nome.">
-        <br><br>
-        Email<br>
-        <input type="email" name="email" placeholder="Digite seu email.">
-        <br><br>
-        Senha<br>
-        <input type="password" name="senha" placeholder="Digite sua senha.">
-        <br><br>
-        Foto<br>
-        <input type="file" name="foto">
-        <br><br>
-        <input type="submit" value="Adicionar">
-    </form>
-</body>
-</html>
+<%- include('../cabecalho.ejs') %>
+<form method="post">
+    Nome<br> 
+    <input type="text" name="nome" placeholder="Digite seu nome.">
+    <br><br>
+    Email<br>
+    <input type="email" name="email" placeholder="Digite seu email.">
+    <br><br>
+    Senha<br>
+    <input type="password" name="senha" placeholder="Digite sua senha.">
+    <br><br>
+    Foto<br>
+    <input type="file" name="foto">
+    <br><br>
+    <input type="submit" value="Adicionar">
+</form>
+<%- include('../rodape.ejs') %>
