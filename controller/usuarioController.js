@@ -5,7 +5,12 @@ function abreadd(req,res){
 }
 
 function add(req,res){
-    let usuario = new Usuario(req.body)
+    let usuario = new Usuario({
+        nome: req.body.nome,
+        email: req.body.email,
+        senha: req.body.senha,
+        foto: req.file.filename
+    })
 
     usuario.save(function(err){
         if(err){

@@ -23,7 +23,9 @@
             <td><%=usuario.nome %></td>
             <td><%=usuario.email %></td>
             <td><%=usuario.senha %></td>
-            <td><%=usuario.foto %></td>
+            <td>
+                <img style="max-width: 50px;" src="/fotos/<%=usuario.foto %>" alt="Foto do usuário">
+            </td>
             <td>
                 <a href="/admin/usuario/edt/<%=usuario._id %>">Editar</a>
             </td>
