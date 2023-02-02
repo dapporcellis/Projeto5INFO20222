@@ -50,7 +50,7 @@ function edt(req,res){
         nome: req.body.nome,
         email: req.body.email,
         senha: req.body.senha,
-        foto: req.body.foto
+        foto: req.file.filename
     },function(err,usuario){
         res.redirect('/admin/usuario/lst')
     })
