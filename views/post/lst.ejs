@@ -1,0 +1,36 @@
+<%- include('../cabecalho.ejs') %>
+<form method="post">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Pesquisar</label>
+        <input name="pesquisar" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pesquisar">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Pesquisar">
+</form>
+<br>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Data</th>
+        <th>Foto</th>
+        <th>Editar</th>
+        <th>Deletar</th>
+    </tr>
+    <% Posts.forEach(function(post){ %>
+        <tr>
+            <td><%=post._id %></td>
+            <td><%=post.titulo %></td>
+            <td><%=post.data %></td>
+            <td>
+                <img style="max-width: 50px;" src="/fotos/<%=post.foto %>" alt="Foto do Post">
+            </td>
+            <td>
+                <a href="/admin/post/edt/<%=post._id %>">Editar</a>
+            </td>
+            <td>
+                <a href="/admin/post/del/<%=post._id %>">Excluir</a>
+            </td>
+        </tr>
+    <% }) %>
+</table>
+<%- include('../rodape.ejs') %>

@@ -1,0 +1,22 @@
+<%- include('../cabecalho.ejs') %>
+<form method="post" enctype="multipart/form-data">
+    <br><br>
+    ID<br>
+    <input type="text" name="id" readonly value="<%=Post._id%>">
+    <br><br>
+    Título<br> 
+    <input class="form-control" type="text" name="titulo" placeholder="Digite o título do post." value="<%=Post.titulo%>">
+    <br><br>
+    Texto<br>
+    <textarea class="form-control" name="texto" placeholder="Digite o texto do post"><%=Post.texto%></textarea>
+    <br><br>
+    Foto<br>
+    <input class="form-control" type="file" name="foto">
+    <br><br>
+    Usuário<br>
+    <select class="form-select" name="usuario" aria-label="Selecione um usuário!">
+        <option value="1">One</option>
+    </select>
+    <input type="submit" value="Adicionar">
+</form>
+<%- include('../rodape.ejs') %>

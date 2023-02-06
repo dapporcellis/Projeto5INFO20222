@@ -1,0 +1,21 @@
+<%- include('../cabecalho.ejs') %>
+<form method="post" enctype="multipart/form-data">
+    Título<br> 
+    <input class="form-control" type="text" name="titulo" placeholder="Digite o título do post.">
+    <br><br>
+    Texto<br>
+    <textarea class="form-control" name="texto" placeholder="Digite o texto do post"></textarea>
+    <br><br>
+    Foto<br>
+    <input class="form-control" type="file" name="foto">
+    <br><br>
+    Usuário<br>
+    <select class="form-select" name="usuario" aria-label="Selecione um usuário!">
+        <% Usuarios.forEach(function(usuario){ %>
+            <option value="<%=usuario._id %>"><%=usuario.nome %></option>
+        <% }) %>
+    </select>
+    <br><br>
+    <input type="submit" value="Adicionar">
+</form>
+<%- include('../rodape.ejs') %>
