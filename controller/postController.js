@@ -13,7 +13,7 @@ function add(req,res){
         texto: req.body.texto,
         data: new Date(),
         foto: req.file.filename,
-        //usuario: req.body.usuario
+        usuario: req.body.usuario
     })
 
     post.save(function(err){
@@ -55,6 +55,7 @@ function edt(req,res){
         texto: req.body.texto,
         data: new Date(),
         foto: req.file.filename,
+        usuario:req.body.usuario
     },function(err,post){
         res.redirect('/admin/post/lst')
     })
